@@ -21,6 +21,9 @@ public class AppConfig {
 	public JmsTemplate jt() {
 		JmsTemplate j=new JmsTemplate();
 		j.setConnectionFactory(cf());
+		
+		/* If you broadcast message to multiple consumer then setPubSubDomain(true)*/
+		//j.setPubSubDomain(true);
 		return j;
 	}
 }

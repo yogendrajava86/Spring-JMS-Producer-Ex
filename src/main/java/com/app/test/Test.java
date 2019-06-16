@@ -10,6 +10,8 @@ public class Test {
 	public static void main(String[] args) {
 		ApplicationContext ac=new AnnotationConfigApplicationContext(AppConfig.class);
 		JmsTemplate j=ac.getBean("jt",JmsTemplate.class);
-		j.send("my-qu1", s->s.createTextMessage("How Are You?"));
+		System.out.println("Producer start");
+		//j.send("my-tpq1", s->s.createTextMessage("How Are You?"));
+		j.send("my-qu1", s->s.createTextMessage("What are you doing?"));
 	}
 }
